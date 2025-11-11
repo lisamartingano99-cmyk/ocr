@@ -16,7 +16,7 @@ jobs:
       - name: Generate index.html
         run: |
           echo "<!DOCTYPE html><html><head><meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="./styles.css"><title>The Journal of Digital Humanities and Data Sustainability</title></head><body><div class="page"><div class="section">" > index.html
-          echo "<h1>The Journal of Digital Humanities and Data Sustainability</h1><h2>Volume 1</h2><ul>" >> index.html
+          echo "<h1>OCR Practice with TEI</h1><ul>" >> index.html
           for file in *.html; do
             echo "<li><a href=\"$file\">$file</a></li>" >> index.html
           done
