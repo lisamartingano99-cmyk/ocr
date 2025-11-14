@@ -14,8 +14,8 @@
             if (!target) throw new Error("Target element not found: " + targetSelector);
 
             try {
-            const res = await fetch(`TEI/${fileName}`, { headers: { "Accept": "application/xml" } });
-            if (!res.ok) throw new Error(`HTTP ${res.status} for TEI/${fileName}`);
+            const res = await fetch(`${fileName}`, { headers: { "Accept": "application/xml" } });
+            if (!res.ok) throw new Error(`HTTP ${res.status} for ${fileName}`);
             const xmlText = await res.text();
 
             // Parse XML (TEI usually uses a default namespace)
@@ -197,8 +197,8 @@
         }
 
         // Call it with your file name and target container
-        // Example: a file at TEI/sample.xml → render into #tei-container
-        loadTEI("christian/christian.xml", "#tei-container");
+        // Example: a file at ./your_name/your_name.xml → render into #tei-container
+        loadTEI("./christian/christian.xml", "#tei-container");
     </script>
 
     <style>
